@@ -269,7 +269,7 @@ echo "${YELLOW}Monitoring: https://console.cloud.google.com/monitoring/dashboard
 echo "${YELLOW}Artifact Registry: https://console.cloud.google.com/artifacts?project=$DEVSHELL_PROJECT_ID${RESET}"
 echo ""
 echo "${CYAN}${BOLD}💡 For more Google Cloud labs and tutorials:${RESET}"
-echo "${YELLOW}${BOLD}👉 ${UNDERLINE}https://www.youtube.com/@drabhishek.5460/videos${RESET}"
+echo "${YELLOW}${BOLD}👉 ${UNDERLINE}https://www.youtube.com/@cloudcupcake-1217${RESET}"
 echo "${GREEN}${BOLD}🔔 Don't forget to subscribe for daily cloud tutorials!${RESET}"
 echo ""
 
