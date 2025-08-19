@@ -1,30 +1,27 @@
-🚀 Process Documents with Python Using the Document AI API || GSP925 ||
+# 🚀 Process Documents with Python Using the Document AI API || GSP925 ||
 
 Solution with Cloudcupcake Scripts
 
+---
+
 Code 1 — Run in Cloud Shell
-# Download the setup script
+
 curl -LO raw.githubusercontent.com/ChanduCharanSample/Level-2-Building-with-Cloud-Tools--2025/main/Process%20Documents%20with%20Python%20Using%20the%20Document%20AI%20API/cloudcupcake.sh
-
-# Make it executable
 sudo chmod +x cloudcupcake.sh
-
-# Run the script
 ./cloudcupcake.sh
 
+---
 
 ✅ Now go to Vertex AI Workbench (Jupyter Notebook):
 👉 Open Jupyter Notebook
 
+---
 Code 2 — Run inside Jupyter Notebook Terminal
-# Download the second script
+
 curl -LO raw.githubusercontent.com/ChanduCharanSample/Level-2-Building-with-Cloud-Tools--2025/main/Process%20Documents%20with%20Python%20Using%20the%20Document%20AI%20API/cloudcupcake1.sh
-
-# Make it executable
 sudo chmod +x cloudcupcake1.sh
-
-# Run the script
 ./cloudcupcake1.sh
 
+---
 
 🎉 Congratulations! You’ve completed the lab using your Cloudcupcake scripts!
