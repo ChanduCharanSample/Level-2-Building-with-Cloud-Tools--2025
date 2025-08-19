@@ -16,7 +16,7 @@ sudo chmod +x cloudcupcake.sh
 ---
 
 ✅ Now go to Vertex AI Workbench (Jupyter Notebook):
-👉 Open Jupyter Notebook 
+👉 Open Jupyter Notebook  [Click here to open Jupiter](https://console.cloud.google.com/vertex-ai/workbench?)  
 
 ---
 Code 2 — Run inside Jupyter Notebook Terminal
