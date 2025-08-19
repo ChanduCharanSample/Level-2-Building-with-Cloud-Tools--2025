@@ -36,8 +36,8 @@ echo "${BG_BLUE}${BOLD}${WHITE}=================================================
 echo "${BG_BLUE}${BOLD}${WHITE}          SUBSCRIBE TO CLOUDCUPCAKE-1217          ${RESET}"
 echo "${BG_BLUE}${BOLD}${WHITE}==================================================${RESET}"
 echo ""
-echo "${CYAN}${BOLD}⚡ Expertly crafted by Dr. Abhishek Cloud${RESET}"
-echo "${YELLOW}${BOLD}📺 YouTube: ${UNDERLINE}https://www.youtube.com/@drabhishek.5460/videos${RESET}"
+echo "${CYAN}${BOLD}⚡ Expertly crafted by CLOUDCUPCAKE-1217${RESET}"
+echo "${YELLOW}${BOLD}📺 YouTube: ${UNDERLINE}https://www.youtube.com/@cloudcupcake-1217${RESET}"
 echo ""
 
 # ======================
