@@ -1,36 +1,38 @@
 #!/bin/bash
-# Automate Dataproc Cluster Creation & Job Submission
 
-# Detect Project ID & Project Number
-PROJECT_ID=$(gcloud config get-value project)
-PROJECT_NUMBER=$(gcloud projects describe "$PROJECT_ID" --format='value(projectNumber)')
+# === CONFIGURATION ===
+REGION="us-central1"    # <-- Change if needed
+CLUSTER_NAME="example-cluster"
 
-# Default Region
-REGION="us-west1"
-
-# Set Dataproc Region
+echo "[1/6] Setting Dataproc region..."
 gcloud config set dataproc/region $REGION
+
+echo "[2/6] Fetching Project ID and Number..."
+PROJECT_ID=$(gcloud config get-value project)
 gcloud config set project $PROJECT_ID
+PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='value(projectNumber)')
 
-# Grant Storage Admin Role to Compute Engine default service account
-gcloud projects add-iam-policy-binding "$PROJECT_ID" \
-  --member="serviceAccount:$PROJECT_NUMBER-compute@developer.gserviceaccount.com" \
-  --role="roles/storage.admin"
+echo "[3/6] Adding Storage Admin role to Compute Engine default service account..."
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member=serviceAccount:$PROJECT_NUMBER-compute@developer.gserviceaccount.com \
+  --role=roles/storage.admin
 
-# Enable Private Google Access
-gcloud compute networks subnets update default --region="$REGION" --enable-private-ip-google-access
+echo "[4/6] Enabling Private Google Access on default subnet..."
+gcloud compute networks subnets update default --region=$REGION --enable-private-ip-google-access
 
-# Create Dataproc Cluster
-gcloud dataproc clusters create example-cluster \
-  --worker-boot-disk-size 500 \
+echo "[5/6] Creating Dataproc cluster: $CLUSTER_NAME..."
+gcloud dataproc clusters create $CLUSTER_NAME \
+  --worker-boot-disk-size=500 \
   --worker-machine-type=e2-standard-4 \
   --master-machine-type=e2-standard-4 \
-  --region="$REGION" --quiet
+  --region=$REGION \
+  --quiet
 
-# Submit Spark Job
-gcloud dataproc jobs submit spark --cluster=example-cluster \
+echo "[6/6] Submitting Spark job to calculate Pi..."
+gcloud dataproc jobs submit spark \
+  --cluster=$CLUSTER_NAME \
   --class=org.apache.spark.examples.SparkPi \
-  --jars=file:///usr/lib/spark/examples/jars/spark-examples.jar -- 1000 \
-  --region="$REGION"
+  --jars=file:///usr/lib/spark/examples/jars/spark-examples.jar \
+  -- 1000
 
-echo "Dataproc Cluster created and SparkPi job submitted successfully!"
+echo "=== Dataproc setup and job submission completed! ==="
