@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# === CONFIGURATION ===
-REGION="us-central1"    # <-- Change if needed
+# === ASK FOR REGION ===
+read -p "Enter your Dataproc region (e.g., us-central1): " REGION
 CLUSTER_NAME="example-cluster"
 
-echo "[1/6] Setting Dataproc region..."
+echo "[1/6] Setting Dataproc region to $REGION ..."
 gcloud config set dataproc/region $REGION
 
 echo "[2/6] Fetching Project ID and Number..."
